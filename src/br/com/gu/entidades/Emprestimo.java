@@ -30,6 +30,7 @@ public class Emprestimo {
 	}
 
 	public void setDataEntrega(Date dataEntrega) {
+		dataEntrega.setDate(dataEntrega.getDate() + 7);
 		this.dataEntrega = dataEntrega;
 	}
 

@@ -1,15 +1,12 @@
 package br.com.gu.entidades;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Livro {
 
 	private long id;
 	private String nomeLivro;
 	private String autor;
 	private String isbn;
-	private List<Emprestimo> emprestimos = new ArrayList<>();
+	
 
 	public Livro(String nomeLivro, String autor, String isbn) {
 		this.autor = autor;
@@ -19,14 +16,6 @@ public class Livro {
 
 	public String getIsbn() {
 		return isbn;
-	}
-
-	public List<Emprestimo> getEmprestimos() {
-		return emprestimos;
-	}
-
-	public void setEmprestimos(List<Emprestimo> emprestimos) {
-		this.emprestimos = emprestimos;
 	}
 
 	public void setIsbn(String isbn) {
