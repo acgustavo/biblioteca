@@ -1,5 +1,6 @@
 package br.com.gu.entidades;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Emprestimo {
@@ -9,6 +10,8 @@ public class Emprestimo {
 	private Aluno aluno;
 	private Livro livro;
 
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	
 	public long getId() {
 		return id;
 	}
@@ -29,6 +32,7 @@ public class Emprestimo {
 		return dataEntrega;
 	}
 
+	@SuppressWarnings("deprecation")
 	public void setDataEntrega(Date dataEntrega) {
 		dataEntrega.setDate(dataEntrega.getDate() + 7);
 		this.dataEntrega = dataEntrega;
@@ -48,6 +52,11 @@ public class Emprestimo {
 
 	public void setLivro(Livro livro) {
 		this.livro = livro;
+	}
+	
+	@Override
+	public String toString() {
+		return (livro.getNomeLivro() + " - " + sdf.format(dataAlugado) + " - " + sdf.format(dataEntrega)) ;
 	}
 
 }

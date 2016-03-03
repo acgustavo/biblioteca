@@ -1,24 +1,17 @@
 package br.com.gu.entidades;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Livro {
 
 	private long id;
 	private String nomeLivro;
-	private String autor;
 	private String isbn;
-	
+	private List<Autor> autores = new ArrayList<>();
 
-	public Livro(String nomeLivro, String autor, String isbn) {
-		this.autor = autor;
+	public Livro(String nomeLivro, String isbn) {
 		this.nomeLivro = nomeLivro;
-		this.isbn = isbn;
-	}
-
-	public String getIsbn() {
-		return isbn;
-	}
-
-	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 
@@ -38,11 +31,21 @@ public class Livro {
 		this.nomeLivro = nomeLivro;
 	}
 
-	public String getAutor() {
-		return autor;
+	public String getIsbn() {
+		return isbn;
 	}
 
-	public void setAutor(String autor) {
-		this.autor = autor;
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
+
+	public List<Autor> getAutores() {
+		return autores;
+	}
+
+	public void setAutores(List<Autor> autores) {
+		this.autores = autores;
+	}
+
+	
 }
